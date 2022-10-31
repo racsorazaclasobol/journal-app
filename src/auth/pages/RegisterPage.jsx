@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Google } from '@mui/icons-material'
-import { Button, Grid, Link, TextField, Typography } from '@mui/material'
+import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material'
 
 import { startCreatingUserWithEmailPassword } from '../../store/auth'
 import { AuthLayout } from '../layout/AuthLayout'
@@ -24,6 +24,10 @@ const formValidation = {
 export const RegisterPage = () => {
 
   const dispatch = useDispatch();
+  const { status, errorMessage } = useSelector( state => state.auth )
+  //Creamos un booleando que determinará cuando está checkeando el registro
+  const isCheckingAuthentication = useMemo(() =>  status === 'checking' , [status])
+
   const [formSubmitted, setFormSubmitted] = useState(false)
 
   const { formState, displayName, email, password, onInputChange,
@@ -99,11 +103,20 @@ export const RegisterPage = () => {
               </Grid>
 
               <Grid container spacing={ 2 } sx={{  mb:2, mt: 1 }}>
+                <Grid 
+                  item 
+                  xs={ 12 } 
+                  display={ !!errorMessage? '' : 'none' }
+                >
+                   <Alert severity='error'>{ errorMessage }</Alert>
+                </Grid>
+
                 <Grid item xs={ 12 } >
                   <Button 
                     variant='contained' 
                     fullWidth
                     type='submit'
+                    disabled={ isCheckingAuthentication }
                   > 
                     Crear Cuenta
                   </Button>
