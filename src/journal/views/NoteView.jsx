@@ -1,14 +1,18 @@
 import { SaveOutlined } from "@mui/icons-material"
 import { Button, Grid, TextField, Typography } from "@mui/material"
+import { useSelector } from "react-redux"
 import { ImageGalery } from "../components"
 
 export const NoteView = () => {
+
+    const { activeNotes } = useSelector( state => state.journal );
+
   return (
     
     <Grid container direction='row' justifyContent='space-between' sx={{ mb:1 }}>
         <Grid item >
             <Typography fontSize={ 39 } fontWeight='Light'>
-                28 de agosto, 2023
+                { activeNotes.date }
             </Typography>
         </Grid>
 
