@@ -8,10 +8,7 @@ export const NavBar = ( { drawerWidth } ) => {
     const dispatch = useDispatch();
 
     const onLogout = () => {
-        console.log("first")
-
         dispatch( startLogoutFirebase() )
-
     }
 
   return (

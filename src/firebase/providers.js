@@ -19,9 +19,7 @@ import { FirebaseAuth } from './config'
         }
         
     } catch (error) {
-
-        console.log(error)
-
+        
         const errorCode = error.code;
         const errorMessage = error.message;
 
