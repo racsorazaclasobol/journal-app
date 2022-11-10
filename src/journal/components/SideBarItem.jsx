@@ -6,14 +6,10 @@ import { setActiveNote } from "../../store/journal";
 
 export const SideBarItem = ({ notes }) => {
 
-    const dispatch = useDispatch();
-
-    console.log(notes)
-    
+    const dispatch = useDispatch();    
     
     const onOpenNote = ( noteInpum ) => {
         dispatch( setActiveNote( noteInpum ) );
-                
     }
 
   return (
