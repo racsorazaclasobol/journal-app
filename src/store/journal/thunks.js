@@ -1,6 +1,6 @@
 import { addDoc, collection, deleteDoc, doc, setDoc } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
-import { fileUpload, loadNotes } from "../../journal/helpers";
+import { fileUpload, loadNotes } from "../../helpers";
 import { addNewEmptyNote, creatingNewNote, deleteNoteById, setActiveNote, setNotes, setPhotosToActiveNote, setSaving, updateNote } from "./journalSlice";
 
 export const startNewNote = () => {
@@ -64,7 +64,6 @@ export const startUploadingFiles = ( files = [] ) => {
         // await fileUpload( files[0] );
         const fileUploadPromises = [];
 
-        console.log(files)
         
         for (const file of files) {
             fileUploadPromises.push( fileUpload( file ) )
@@ -89,6 +88,5 @@ export const startDeletingNote = () => {
 
         dispatch( deleteNoteById( note.id ) );
 
-        
     }
 }

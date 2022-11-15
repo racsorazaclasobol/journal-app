@@ -30,7 +30,6 @@ export const NoteView = () => {
     }, [formState])
 
     useEffect(() => {
-        console.log("Entró aqui: " + messageSaved)
       if( messageSaved.length > 0 ){
         Swal.fire('Nota Actualizada', messageSaved, 'success')
       }

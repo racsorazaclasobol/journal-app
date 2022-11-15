@@ -1,3 +1,7 @@
+#Variables de env
+.env
+.env.test
+
 # Logs
 logs
 *.log
@@ -11,6 +15,7 @@ node_modules
 dist
 dist-ssr
 *.local
+*.yarn
 
 # Editor directories and files
 .vscode/*
