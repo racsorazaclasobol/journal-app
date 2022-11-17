@@ -10,24 +10,13 @@ import { getEnvironments } from "../helpers/getEnvironments";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-/* ---------- Codigo Propio externo a firebase VARIABLES DE ENTORNO ------------ */
-const {
-  VITE_APIKEY,
-  VITE_AUTHDOMAIN,
-  VITE_PROJECTID,
-  VITE_STORAGEBUCKET,
-  VITE_MESSAGINGSENDERID,
-  VITE_APPID,  
-} = getEnvironments();
-/* ---------- Codigo Propio externo a firebase VARIABLES DE ENTORNO ------------ */
-
 const firebaseConfig = {
-  apiKey:           VITE_APIKEY,
-  authDomain:       VITE_AUTHDOMAIN,
-  projectId:        VITE_PROJECTID,
-  storageBucket:    VITE_STORAGEBUCKET,
-  messagingSenderId:VITE_MESSAGINGSENDERID,
-  appId:            VITE_APPID,  
+  apiKey: "AIzaSyAAmMN9iWnbAEEpF0uChp5YfsLJfHXZERg",
+  authDomain: "react-projects-1b37d.firebaseapp.com",
+  projectId: "react-projects-1b37d",
+  storageBucket: "react-projects-1b37d.appspot.com",
+  messagingSenderId: "336350538203",
+  appId: "1:336350538203:web:592ed75edddfec185cdffe"
 };
 
 // Initialize Firebase
