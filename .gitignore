@@ -1,5 +1,4 @@
 #Variables de env
-.env
 .env.test
 
 # Logs
