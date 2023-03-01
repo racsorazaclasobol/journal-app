@@ -21,7 +21,7 @@ export const NavBar = ( { drawerWidth } ) => {
             } } 
     >
     
-    <Toolbar>
+    <Toolbar >
         <IconButton 
             color='inherit'
             edge="start"
@@ -30,7 +30,7 @@ export const NavBar = ( { drawerWidth } ) => {
             <MenuOutlined />
         </IconButton>
 
-        <Grid container direction='row' justifyContent='space-between' alignItems='center'>
+        <Grid container direction='row' justifyContent='space-between' alignItems='center' >
             <Typography variant="h6" noWrap component="div"> Journal App </Typography>
 
             <IconButton color="error" onClick={ onLogout } >
